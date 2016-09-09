@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="no-skrollr">
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<title>Casoy</title>
+
+	<style type="text/css">
+	* {
+		padding:0;
+		margin:0;
+	}
+
+	html, body {
+		height:100%;
+		color:#FFFFFF;
+	
+
+	}
+		a  { color:#C0C0C0; }
+    a:visited { color:#969696; }
+    a:hover { color:#969696; }
+    a:active { color:#FFFFFF; }
+	a{text-decoration:none }
+     }
+
+	.skrollr-desktop body {
+		height:100% !important;
+	}
+
+	body {
+		font-family:sans-serif;
+		
+	}
+
+	p {
+		margin:1em 0;
+	}
+
+	.parallax-image-wrapper {
+		position:fixed;
+		left:0;
+		width:100%;
+		overflow:hidden;
+	}
+
+	.parallax-image-wrapper-50 {
+		height:50%;
+		top:-50%;
+	}
+
+	.parallax-image-wrapper-100 {
+		height:100%;
+		top:-100%;
+	}
+
+	.parallax-image {
+		display:none;
+		position:absolute;
+		bottom:0;
+		left:0;
+		width:100%;
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size:cover;
+	}
+
+	.parallax-image-50 {
+		height:200%;
+		top:-50%;
+	}
+
+	.parallax-image-100 {
+		height:100%;
+		top:0;
+	}
+
+	.parallax-image.skrollable-between {
+		display:block;
+	}
+
+	.no-skrollr .parallax-image-wrapper {
+		display:none !important;
+	}
+
+	#skrollr-body {
+		height:100%;
+		overflow:visible;
+		position:relative;
+	}
+
+	.gap {
+		background:transparent top no-repeat;
+		background-size:cover;
+	}
+
+	.skrollr .gap {
+		background:transparent !important;
+	}
+
+	.gap-50 {
+		height:50%;
+	}
+
+	.gap-100 {
+		height:100%;
+	}
+
+	.header, .content {
+		background:#121212;
+		padding:1em;
+
+
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.fixed-nav-bar {
+  position: fixed;
+  padding:0.4em;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 30px;
+  box-sizing:border-box;
+  background-color: #111111;
+}
+
+	.content-full {
+		height:100%;
+	}
+
+	#done {
+		height:100%;
+	}
+	</style>
+</head>
+
+<body>
+	<!--
+		We position the images fixed and therefore need to place them outside of #skrollr-body.
+		We will then use data-anchor-target to display the correct image matching the current section (.gap element).
+	-->
+
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-100"
+		data-anchor-target="#home + .gap"
+		data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-100"
+			style="background-image:url(imagens/home.jpg)"
+			data-anchor-target="#home + .gap"
+			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+		></div>
+		<!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+	</div>
+
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-100"
+		data-anchor-target="#bacons + .gap"
+		data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-100"
+			style="background-image:url(imagens/banda.jpg)"
+			data-anchor-target="#bacons + .gap"
+			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+		></div>
+	</div>
+
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-50"
+		data-anchor-target="#kittens + .gap"
+		data-bottom-top="transform:translate3d(0px, 300%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-50"
+			style="background-image:url(imagens/back.jpg)"
+			data-anchor-target="#kittens + .gap"
+			data-bottom-top="transform: translate3d(0px, -60%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 60%, 0px);"
+		></div>
+	</div>
+
+	<div id="skrollr-body">
+		<div class="fixed-nav-bar" id="navbar" align="center">
+  <a href="#home" style="font-size:20px;">HOME</a>
+  <a href="#sobre" style="font-size:20px">A BANDA</a>
+  <a href="#musica" style="font-size:20px">MÚSICA</a>
+  <a href="#videos" style="font-size:20px">VÍDEOS</a>
+  <a href="#contato" style="font-size:20px">CONTATO</a>
+		</div>
+		<div class="gap gap-100" id="home" style="background-image:url(imagens/home.jpg);"></div>
+		<div class="content content-full" id="sobre" style="background:url('imagens/back.jpg') transparent top no-repeat; background-size:cover; height:2000px">
+			<p style="font-size:20px; position:relative; max-width:550px; min-width:350px; text-align:justify; float:left; margin-left:30px; margin-right:30px"><br>Formada por três músicos jovens, Gustavo Pereira, Marcelo Saboya e Tiago de Souza, o Casoy surpreende na primeira audição. O instigante som do grupo é a soma de diversos estilos musicais, misturando diferentes influências sem se prender a um gênero específico. Com baixo, guitarra e bateria, o trio consegue conceber arranjos completos, utilizando os instrumentos em total integração e dispensando complementos.</p>
+			
+			<p style="font-size:20px; position:relative; max-width:550px; min-width:350px; text-align:justify; float:left; margin-left:30px; margin-right:30px"><br>O Casoy iniciou sua trajetória em 2012 e desde então realizou shows em espaços como o Solar de Botafogo, o Centro Municipal de Referência da música Carioca, o Espaço Sérgio Porto, SESC Engenho de Dentro, Audio Rebel, entre outros. Foi ainda vencedor dos editais de Cultura Niterói - Arte na Rua, oferecido pela Prefeitura Municipal de Niterói e do edital de ocupação do Centro Cultural IBEU, também no Rio de Janeiro.</p>
+
+			<p style="font-size:20px; position-relative; max-width:550px; min-width:350px; text-align:justify; float:left; margin-left:30px; margin-right:30px"><br>Marcelo Saboya iniciou seus estudos sozinho com o violão e a voz, depois passou para o baixo elétrico. Formado em Licenciatura em Música na UNIRIO, Regência Coral nos Seminários de Música ProArte, ainda realizou cursos de especialização na área coral, como a Master Class do maestro Martin Schmidt, da Karlsruhe Hochschule fur Musik na Alemanha, Música Vocal Renascentista com Carlos Alberto Figueiredo, nos Seminários de Música ProArte</p>
+		</div>
+		<div class="gap gap-50" id="musica" style="background-image:url(imagens/Casoy1.jpg);"></div>
+		<div class="content content-full" align="center">
+			<iframe width="100%" height="380" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/76575207&amp;color=202020&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+		</div>
+		<div class="content content-full" id="videos" align="center" style="height:1800px">
+		<br><br>
+		<iframe width="400" height="225" src="https://www.youtube.com/embed/UfhNx0n0TLo" frameborder="0" allowfullscreen></iframe>
+		<iframe width="400" height="225" src="https://www.youtube.com/embed/qPmIW6axb7o" frameborder="0" allowfullscreen></iframe>
+		<iframe width="400" height="225" src="https://www.youtube.com/embed/-C56ajN4ma8" frameborder="0" allowfullscreen></iframe>
+		<iframe width="400" height="225" src="https://www.youtube.com/embed/wEBR-UNu9DA" frameborder="0" allowfullscreen></iframe>
+		<iframe width="400" height="225" src="https://www.youtube.com/embed/Y7OHuanCEN0" frameborder="0" allowfullscreen></iframe>
+		<iframe width="400" height="225" src="https://www.youtube.com/embed/gj7TBxe0hXU" frameborder="0" allowfullscreen></iframe>
+		<iframe width="400" height="225" src="https://www.youtube.com/embed/bZPKiF8yOAc" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="content content-full" id="contato" style="background-image:url(imagens/contato.jpg); background-repeat:no-repeat; background-size:cover; background-position:top">
+		<br>BLABLABLA</div>
+
+	</div>
+
+	<script type="text/javascript" src="javascript/skrollr.min.js"></script>
+	<script type="text/javascript">
+	skrollr.init({
+		smoothScrolling: false,
+		mobileDeceleration: 0.004
+	});
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1200, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+</body>
+
+</html>
